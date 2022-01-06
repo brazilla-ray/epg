@@ -1,0 +1,58 @@
+---
+layout: layout.njk
+title: ephemeral pattern generator
+---
+
+<main>
+  <!-- flex container -->
+  <div class="row">
+    <h1>ephemeral pattern generator</h1>
+    <section id="output">
+      <div id="glyph-container"></div>
+    </section><!-- flex child -->
+  </div>
+  <div class="row">
+    <section id="controls">
+      <div id="add-buttons"><!-- flex container -->
+        <button id="addL">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62">
+            <g data-name="Glyph L">
+              <line x1="4" y1="4" x2="58" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+              <line x1="4" y1="40" x2="22" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+              <line x1="40" y1="4" x2="59" y2="22" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+            </g>
+          </svg>
+          <span class="sr-only">add left glyph</span>
+        </button>
+        <button id="addR"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62">
+            <g data-name="Glyph R">
+              <line x1="59" y1="4" x2="5" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+              <line x1="59" y1="40" x2="41" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+              <line x1="23" y1="4" x2="4" y2="22" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8" />
+            </g>
+          </svg><span class="sr-only">add right glyph</span></button>
+      </div>
+      <div id="color-pickers">
+        <!-- flex container -->
+        <button id="redBtn" class="picker"><span class="sr-only">red</span></button>
+        <button id="orangeBtn" class="picker "><span class="sr-only">orange</span></button>
+        <button id="yellowBtn" class="picker"><span class="sr-only">yellow</span></button>
+        <button id="greenBtn" class="picker"><span class="sr-only">green</span></button>
+        <button id="blueBtn" class="picker"><span class="sr-only">blue</span></button>
+        <button id="indigoBtn" class="picker"><span class="sr-only">indigo</span></button>
+        <button id="violetBtn" class="picker"><span class="sr-only">violet</span></button>
+      </div>
+    </section><!-- flex child -->
+  </div>
+  <div class="row">
+    <h2 class="label">add glyphs</h2>
+    <h2 class="label">select color</h2>
+  </div>
+  <div class="row">
+    <ol class="instructions">
+      <li>click above to add glyphs to screen</li>
+      <li>click on a glyph to select it</li>
+      <li>click on a color button above to change the color of the selected glyph</li>
+    </ol>
+  </div>
+</main>
