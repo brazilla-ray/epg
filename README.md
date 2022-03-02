@@ -19,7 +19,7 @@ The first thing we need is a place to display the glyphs once they get added.
   <div id="glyph-container"></div>
 </section>
 ```
-This is just an empty div for now, but once we add glyphs, it will get filled with `<svg>` elements.
+This is just an empty div for now, but once we add glyphs, it will get filled with `<svg>` elements.<!-- get rid of "we" -->
 ```html
 <div id="glyph-container">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph">...</svg>
@@ -57,7 +57,7 @@ Next up are some buttons to add glyphs and eventually change their color.
   <!-- etc. --> 
 </div>
 ```
-Nothing too special here, except that I use IDs so that I'll be able to reference the buttons easily in the Javascript. Note that for the "add" buttons, I'm using an SVG of the relevant glyph as the content of the button. While that will indicate visually what the button does, it won't do much for people using screen readers. In practice, there should be something to describe what the button does that a screen reader will pick up.[^1]
+Nothing too special here, except that I use IDs so that I'll be able to reference the buttons easily in the Javascript. Note that for the "add" buttons, I'm using an SVG of the relevant glyph as the content of the button. While that may indicate visually what the button is for, it won't do much for people using screen readers. In practice, there should be something to describe what the button does that a screen reader will pick up.[^1]
 
 [^1]: [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#accessibility_concerns) has a bit about buttons and accessibility, and there's a good [article](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/#basic-alternative-descriptions-using-the-svg-tag) by [Carrie Fisher](https://cariefisher.com/) on [Smashing Magazine](https://www.smashingmagazine.com/2021/05/accessible-svg-patterns-comparison/) that goes over some options for making SVGs more accessible.
 
@@ -82,14 +82,14 @@ const glyphR =
 
 const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
 ```
-I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using `document.getElementsByClassName()`. This is going to have some implications later on.
+I use `document.getElementById()` to reference the "add" buttons and the `<div>` that will act as the display area for the glyphs. Because there will be more than one glyph on the screen, I can't use an ID, so I'm using `document.getElementsByClassName()`. This is going to have some implications later on.<!-- consider being more specific -->
 
 Next, I declare a couple of variables for the glyphs themselves, which will be the (long, messy) SVG code.
 
 Finally, I create an array that will hold the colors that will be used. You may have noticed that I didn't declare variables for the color buttons; I'll be doing that later and using the colors in this array to name them.
 
 ### the `init` function
-Most of the code for the app's behavior will be wrapped in a function, which can then be called once the page has loaded.
+Most of the code for the app's behavior will be wrapped in a function, which will be called once the page has loaded.
 ```javascript
 function init() {
   // app functionality will go in here
@@ -188,7 +188,7 @@ window.addEventListener('load', (event) => {
 ```
 Inside the `init()` function are two other functions, `glyphButtons()` and `colorButtons()`, both of which get called at the end of `init()`.
 ### event listeners on glyphs
-Before the color of the glyphs can be changed, a single glyph will need to be selected. For now, I'm going to declare an empty variable that will "hold" the selected glyph. I'll put it at the top of the `init()` function, so that it can be accessed from the other functions within `init()`. Note that I'm using `let` so that it's value can be changed as needed.
+Before the color of the glyphs can be changed, a single glyph will need to be selected. For now, I'm going to declare an empty variable that will eventually "hold" the selected glyph. I'll put it at the top of the `init()` function, so that it can be accessed from the other functions within `init()`. Note that I'm using `let` so that it's value can be changed as needed.
 ```javascript
   let selectedGlyph = "";
 ```
@@ -204,7 +204,7 @@ observer.observe(displayArea, {
   childList: true
 });
 ```
-First, a new `MutationObserver()` is declared with the variable `observer`, which then uses the method `observe` to point the observer to the `displayArea`. The options `subtree` and `childList` tell the observer to watch for changes to the all the child nodes of `displayArea`. 
+First, a new `MutationObserver()` is declared with the variable `observer`, which then uses the method `observe` to point the observer to the `displayArea`. The options `subtree` and `childList` tell the observer to watch all the child nodes of `displayArea` for changes.
 #### adding the listener
 With the `MutationObserver` in place, an event listener can now be attached to each glyph as it gets added. Earlier I mentioned that IDs couldn't be used for the glyphs, because there would be more than one. Instead, they will each get a class of `.glyph`, which can then be collected with `getElementsByClassName()`. Because this will return multiple elements, a loop is needed. As each glyph is iterated over, it gets an event listener, which is again set up for a `'click'` event.
 ```javascript
@@ -254,7 +254,7 @@ function colorButtons() {
   }
 }
 ```
-In order to assign that color to the selected glyph, a class will get added to the glyph that styles it with CSS. I chose to make the function that does that a method on an object that resides outside of the `init()` function. Putting this object outside `init()` means its methods will be readily available regardless of where the function calling them resides.
+In order to assign that color to the selected glyph, a class will get added to the glyph that styles it with CSS. There's going to be a bit of back and forth here between `glyphListener()` and `colorButtons()`; where `glyphListener()` just cares about `selectedGlyph`, `colorButtons()` needs to know about both `selectedGlyph` and `selectedColor`. So I created an object (`setColor`) outside of `glyphListener()` and `colorButtons` that will have a couple of methods attached.
 ```javascript
 const setColor = {
   addColorClass(glyph, color) {
@@ -274,7 +274,7 @@ function colorButtons() {
   }
 }
 ```
-If the code was left in this state, each time a color button was clicked, a new color class would be added to the glyph. Just as the styling provided by `.glyph-selected` needed to be removed from one glyph before it could be added to another, the color class needs to be removed
+If the code was left in this state, each time a color button was clicked, a new color class would be added to the glyph. Just as the styling provided by `.glyph-selected` needed to be removed from one glyph before it could be added to another, the color class needs to be removed:
 ```javascript
 removeColorClass(glyph) {
   let colorRegEx = /(?!Glyph)[a-z]*Glyph/gm;
@@ -284,7 +284,27 @@ removeColorClass(glyph) {
   }
 },
 ```
-```javascript
-setColor.removeColorClass(selectedGlyph);
-```
+To find the classes that add color to the glyph, there is RegEx that will match anything that begins with some number of letters and ends with 'Glyph', thus matching any of the color classes that have been added. That RegEx is assigned to a variable so that it can be used in a loop that will go over all the classes of the selected glyph and match them against the RegEx.
 
+To set up that loop, I've used `classList` to get all the classes of the selected glyph, and then used the `values()` method to put them in an array. Then, that array is iterated over, and `match()` is used to check if the class matches the RegEx. If it does, it gets removed from the element's `classList`. 
+
+This call to `removeColorClass()` gets placed just before the selected color class is added, and `selectedGlyph` is passed as the argument.
+
+The code now looks like this:
+
+```javascript
+function colorButtons() {
+  for (let color of colors) {
+    let colorBtn = document.getElementById(`${color}Btn`);
+    colorBtn.addEventListener('click', () => {
+      selectedColor = color;
+      setColor.removeColorClass(selectedGlyph);
+      setColor.addColorClass(selectedGlyph, selectedColor);
+    });
+  }
+}
+```
+### conclusion
+That should do it! Now the user can add glyphs to the screen, select them, and change their color. There are several features I'd like to add at some point, like the ability to delete glyphs, and limit the total number of glyphs to what fits in the display. Maybe even some animation! But that's for another day.
+
+Thanks for reading!
