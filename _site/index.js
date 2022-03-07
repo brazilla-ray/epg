@@ -13,6 +13,7 @@ const glyphR =
 const glyphs = document.getElementsByClassName("glyph");
 
 const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+<<<<<<< Updated upstream
 
 function init() {
   const setColor = {
@@ -28,6 +29,23 @@ function init() {
     },
   };
   
+=======
+
+function init() {
+  const setColor = {
+    addColorClass(glyph, color) {
+      glyph.classList.add(`${color}-glyph`);
+    },
+    removeColorClass(glyph) {
+      let colorRegEx = /^\w*-glyph/gm;
+      let iterator = glyph.classList.values();
+      for (let value of iterator) {
+        glyph.classList.remove(value.match(colorRegEx));
+      }
+    },
+  };
+
+>>>>>>> Stashed changes
   let selectedGlyph = "";
   let selectedColor = "";
   let observer = new MutationObserver(function () {

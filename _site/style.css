@@ -160,31 +160,31 @@ h2 {
   stroke: cyan;
 }
 
-.redGlyph line {
+.red-glyph line {
   stroke: red;
 }
 
-.orangeGlyph line {
+.orange-glyph line {
   stroke: orange;
 }
 
-.yellowGlyph line {
+.yellow-glyph line {
   stroke: yellow;
 }
 
-.greenGlyph line {
+.green-glyph line {
   stroke: green;
 }
 
-.blueGlyph line {
+.blue-glyph line {
   stroke: blue;
 }
 
-.indigoGlyph line {
+.indigo-glyph line {
   stroke: indigo;
 }
 
-.violetGlyph line {
+.violet-glyph line {
   stroke: violet;
 }
 
