@@ -124,7 +124,7 @@ h2 {
 
 /* https://css-tricks.com/gradient-borders-in-css/ */
 #output::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -133,16 +133,7 @@ h2 {
   margin: -10px;
   border-radius: inherit;
   z-index: -1;
-  background: linear-gradient(
-    123deg,
-    red,
-    orange,
-    yellow,
-    green,
-    blue,
-    indigo,
-    violet
-  );
+  background: linear-gradient(123deg, red, orange, yellow, green, blue, indigo, violet);
 }
 
 #glyph-container {
@@ -191,3 +182,5 @@ h2 {
   top: -9999px;
   left: -9999px;
 }
+
+/*# sourceMappingURL=style.css.map */
