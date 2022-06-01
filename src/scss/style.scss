@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
 html {
-  background-color: #fffff0;
-  font-family: "Alata", sans;
+  background-color: #dadada;
+  font-family: 'Alata', sans;
 }
 
 main {
@@ -126,7 +126,7 @@ h2 {
 
 /* https://css-tricks.com/gradient-borders-in-css/ */
 #output::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   right: 0;
