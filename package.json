@@ -7,8 +7,8 @@
     "watch:eleventy": "npx @11ty/eleventy --serve",
     "build:eleventy": "npx @11ty/eleventy",
     "watch:sass": "sass --watch src/scss:src/css",
-    "build:sass": "sass src/scss:src/css",
-    "start": "npm-run-all build:sass --parallel watch:*",
+    "build:sass": "sass --no-source-map src/scss:src/css",
+    "start": "npm-run-all --parallel watch:*",
     "build": "npm-run-all build:sass --parallel build:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
