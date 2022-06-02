@@ -1,6 +1,6 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget('./src/scss/');
-  eleventyConfig.addPassthroughCopy('src/css/style.css');
+  eleventyConfig.addPassthroughCopy('src/css');
   eleventyConfig.addPassthroughCopy('src/index.js');
   eleventyConfig.setUseGitIgnore(false);
   return {
