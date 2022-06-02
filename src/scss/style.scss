@@ -1,28 +1,10 @@
 @use '_reset';
+@use '_typography';
 @use '_flex';
+@use '_glyphs';
 
 body {
   background-color: #fffff0;
-  font-family: sans-serif;
-}
-
-main {
-  justify-content: center;
-}
-
-h1 {
-  /* writing-mode: vertical-lr; */
-  font-size: 1.5em;
-  flex: 1 0 100%;
-  text-align: center;
-}
-
-h2 {
-  font-size: 0.875em;
-}
-
-.glyph {
-  display: inline;
 }
 
 .label {
@@ -103,18 +85,13 @@ h2 {
   background: radial-gradient(violet, violet, #fffff0);
 }
 
-#output svg {
-  max-width: 50px;
-}
-
 #output {
   position: relative;
-  width: 400px;
-  min-height: 425px;
+  min-height: min(calc(100vw - 100px), 600px);
+  max-width: min(calc(100vw - 100px), 600px);
   padding: 20px;
   background-color: #0f0f0f;
   border-radius: 5%;
-  margin: 10px auto;
 }
 
 /* https://css-tricks.com/gradient-borders-in-css/ */
