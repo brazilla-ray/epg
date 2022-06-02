@@ -3,15 +3,14 @@ layout: layout.njk
 title: ephemeral pattern generator
 ---
 
-<main>
-  <!-- flex container -->
-  <div class="row">
-    <h1>ephemeral pattern generator</h1>
-    <section id="output">
+<main class="container"><!-- flex container -->
+  <div class="container row"><!-- flex container / flex child -->
+    <h1>ephemeral pattern generator</h1><!-- flex child -->
+    <section id="output"><!-- flex child -->
       <div id="glyph-container"></div>
     </section><!-- flex child -->
   </div>
-  <div class="row">
+  <div>
     <section id="controls">
       <div id="add-buttons"><!-- flex container -->
         <button id="addL">
@@ -44,11 +43,11 @@ title: ephemeral pattern generator
       </div>
     </section><!-- flex child -->
   </div>
-  <div class="row">
+  <div>
     <h2 class="label">add glyphs</h2>
     <h2 class="label">select color</h2>
   </div>
-  <div class="row">
+  <div>
     <ol class="instructions">
       <li>click above to add glyphs to screen</li>
       <li>click on a glyph to select it</li>
