@@ -1,8 +1,39 @@
+@use 'sass:math';
+/* functions */
+@function nomBoxWidth($numberOfBoxes) {
+  @return math.div(100, $numberOfBoxes);
+}
+
+@function adjBoxWidth($numberOfBoxes, $widthOfGap) {
+  @return math.div($widthOfGap * ($numberOfBoxes - 1), $numberOfBoxes);
+}
+
+$numberOfBoxesSmall: 2;
+$numberOfBoxesMed: 4;
+$numberOfBoxesLg: 8;
+$widthOfGap: 10;
+
 #output {
   flex: 1;
+  max-width: clamp(280px, calc(100vw - 110px), 600px);
+  aspect-ratio: 1;
+}
+
+#glyph-container {
+  justify-content: flex-start;
+  gap: #{$widthOfGap}px;
+  flex: 1;
+  overflow: hidden;
+  max-height: 100%;
 }
 
 .glyph {
-  display: inline;
-  max-width: 20vw;
+  flex: 0 calc(#{nomBoxWidth($numberOfBoxesSmall)}% - #{adjBoxWidth($numberOfBoxesSmall, $widthOfGap)}px);
+  aspect-ratio: 1;
+  @media screen and (min-width: 440px) {
+    flex-basis: calc(#{nomBoxWidth($numberOfBoxesMed)}% - #{adjBoxWidth($numberOfBoxesMed, $widthOfGap)}px);
+  }
+  @media screen and (min-width: 710px) {
+        flex-basis: calc(#{nomBoxWidth($numberOfBoxesLg)}% - #{adjBoxWidth($numberOfBoxesLg, $widthOfGap)}px);
+  }
 }
