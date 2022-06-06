@@ -14,8 +14,6 @@ $numberOfBoxesLg: 8;
 $widthOfGap: 10;
 
 #output {
-  flex: 1;
-  max-width: clamp(280px, calc(100vw - 110px), 600px);
   aspect-ratio: 1;
 }
 

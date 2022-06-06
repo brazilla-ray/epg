@@ -8,6 +8,12 @@ body {
   background-color: #fffff0;
 }
 
+section {
+  flex-grow: 1;
+  flex-basis: 100%;
+  max-width: clamp(280px, calc(100vw - 110px), 600px);
+}
+
 .label {
   margin: 10px 0;
 }
@@ -18,17 +24,10 @@ body {
 }
 
 #controls {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  flex: 1;
-  align-items: center;
   margin-top: 50px;
 }
 
 #add-buttons {
-  display: flex;
-  gap: 12.5px;
   padding-right: 12px;
 }
 
@@ -46,9 +45,6 @@ body {
 }
 
 #color-pickers {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
 }
 
 .picker {

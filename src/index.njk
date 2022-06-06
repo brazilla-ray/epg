@@ -5,7 +5,6 @@ title: ephemeral pattern generator
 
 <main class="container"><!-- flex container -->
   <h1>ephemeral pattern generator</h1><!-- flex child -->
-    <section id="output"><!-- flex child -->
-      <div id="glyph-container" class="container"></div>
-    </section><!-- flex child -->
+    <section id="output" class="container">{% include '_output.njk' %}</section>
+    <section id="controls" class="container">{% include '_controls.njk' %}</section>
 </main>
