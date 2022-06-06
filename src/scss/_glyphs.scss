@@ -1,17 +1,9 @@
-@use 'sass:math';
-/* functions */
-@function nomBoxWidth($numberOfBoxes) {
-  @return math.div(100, $numberOfBoxes);
-}
+@use '_utilities' as u;
 
-@function adjBoxWidth($numberOfBoxes, $widthOfGap) {
-  @return math.div($widthOfGap * ($numberOfBoxes - 1), $numberOfBoxes);
-}
-
-$numberOfBoxesSmall: 2;
-$numberOfBoxesMed: 4;
-$numberOfBoxesLg: 8;
-$widthOfGap: 10;
+$boxBase: 2;
+$doubleBoxBase: u.boxMultiplier($boxBase, 2);
+$tripleBoxBase: u.boxMultiplier($boxBase, 3);
+$quadBoxBase: u.boxMultiplier($boxBase, 4);
 
 #output {
   aspect-ratio: 1;
@@ -19,19 +11,34 @@ $widthOfGap: 10;
 
 #glyph-container {
   justify-content: flex-start;
-  gap: #{$widthOfGap}px;
+  align-content: flex-start;
+  gap: #{u.$widthOfGap}px;
   flex: 1;
   overflow: hidden;
   max-height: 100%;
 }
 
 .glyph {
-  flex: 0 calc(#{nomBoxWidth($numberOfBoxesSmall)}% - #{adjBoxWidth($numberOfBoxesSmall, $widthOfGap)}px);
+  align-self: flex-start;
+  flex: 0
+    calc(
+      #{u.nomBoxWidth($boxBase)}% - #{u.adjBoxWidth($boxBase, u.$widthOfGap)}px
+    );
   aspect-ratio: 1;
   @media screen and (min-width: 440px) {
-    flex-basis: calc(#{nomBoxWidth($numberOfBoxesMed)}% - #{adjBoxWidth($numberOfBoxesMed, $widthOfGap)}px);
+    flex-basis: calc(
+      #{u.nomBoxWidth($doubleBoxBase)}% - #{u.adjBoxWidth(
+          $doubleBoxBase,
+          u.$widthOfGap
+        )}px
+    );
   }
   @media screen and (min-width: 710px) {
-        flex-basis: calc(#{nomBoxWidth($numberOfBoxesLg)}% - #{adjBoxWidth($numberOfBoxesLg, $widthOfGap)}px);
+    flex-basis: calc(
+      #{u.nomBoxWidth($quadBoxBase)}% - #{u.adjBoxWidth(
+          $quadBoxBase,
+          u.$widthOfGap
+        )}px
+    );
   }
 }

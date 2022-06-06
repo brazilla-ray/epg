@@ -1,14 +1,14 @@
-<div id="add-buttons"><!-- flex container -->
-  <button id="addL">
-    {% include '_glyphL.njk' %}
-    <span class="sr-only">add left glyph</span>
+<div id="add-buttons" class="container"><!-- flex container -->
+  <button id="addL" class="container">
+    <div class="icon" aria-hidden="true">{% include '_glyphL.njk' %}</div>
+    <div class="label">left</div>
   </button>
-  <button id="addR">
-    {% include '_glyphR.njk' %}
-    <span class="sr-only">add right glyph</span>
+  <button id="addR" class="container">
+    <div class="icon" aria-hidden="true">{% include '_glyphR.njk' %}</div>
+    <div class="label">right</div>
   </button>
 </div>
-<div id="color-pickers">
+<div id="color-pickers" class="container">
   <!-- flex container -->
   <button id="redBtn" class="picker"><span class="sr-only">red</span></button>
   <button id="orangeBtn" class="picker "><span class="sr-only">orange</span></button>

@@ -1,0 +1,16 @@
+@use 'sass:math';
+
+$widthOfGap: 10;
+
+/* functions */
+@function boxMultiplier($numBoxBase: 2, $num: 1) {
+  @return $numBoxBase * $num;
+
+}
+@function nomBoxWidth($numberOfBoxes) {
+  @return math.div(100, $numberOfBoxes);
+}
+
+@function adjBoxWidth($numberOfBoxes, $widthOfGap) {
+  @return math.div($widthOfGap * ($numberOfBoxes - 1), $numberOfBoxes);
+}

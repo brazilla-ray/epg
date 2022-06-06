@@ -1,8 +1,13 @@
-@use '_utilities';
+@use '_utilities' as u;
 @use '_reset';
 @use '_typography';
 @use '_flex';
 @use '_glyphs';
+
+$boxBase: 2;
+$doubleBoxBase: u.boxMultiplier($boxBase, 2);
+$tripleBoxBase: u.boxMultiplier($boxBase, 3);
+$quadBoxBase: u.boxMultiplier($boxBase, 4);
 
 body {
   background-color: #fffff0;
@@ -15,7 +20,7 @@ section {
 }
 
 .label {
-  margin: 10px 0;
+  align-self: center;
 }
 
 .instructions {
@@ -28,16 +33,29 @@ section {
 }
 
 #add-buttons {
-  padding-right: 12px;
+  margin: 1rem 0;
+  justify-content: space-between;
+  flex-basis: 100%;
+  gap: #{u.$widthOfGap}px;
+}
+
+#add-buttons button .icon {
+  width: 3.125rem;
+  height: 3.125rem;
+  padding: 4px;
 }
 
 #add-buttons button {
-  width: 50px;
-  height: 50px;
-  padding: 4px;
-  border-radius: 25%;
+  padding: 0;
   border: none;
-  background: radial-gradient(#00000f, #00000f, #999);
+  flex: 0
+    calc(
+      #{u.nomBoxWidth($boxBase)}% - #{u.adjBoxWidth($boxBase, u.$widthOfGap)}px
+    );
+  background: #00000f;
+  justify-content: center;
+  gap: #{u.$widthOfGap}px;
+  color: #fffff0;
 }
 
 #add-buttons svg line {
@@ -45,41 +63,50 @@ section {
 }
 
 #color-pickers {
+  flex-basis: 100%;
+  justify-content: flex-start;
+  gap: #{u.$widthOfGap}px;
+  margin: 1rem 0;
 }
 
 .picker {
-  height: 50px;
-  width: 50px;
-  border-radius: 25%;
+  height: 3.125rem;
+  flex: 0
+    calc(
+      #{u.nomBoxWidth($doubleBoxBase)}% - #{u.adjBoxWidth(
+          $doubleBoxBase,
+          u.$widthOfGap
+        )}px
+    );
   border: none;
 }
 
 #redBtn {
-  background: radial-gradient(red, red, #fffff0);
+  background: red;
 }
 
 #orangeBtn {
-  background: radial-gradient(orange, orange, #fffff0);
+  background: orange;
 }
 
 #yellowBtn {
-  background: radial-gradient(yellow, yellow, #fffff0);
+  background: yellow;
 }
 
 #greenBtn {
-  background: radial-gradient(green, green, #fffff0);
+  background: green;
 }
 
 #blueBtn {
-  background: radial-gradient(blue, blue, #fffff0);
+  background: blue;
 }
 
 #indigoBtn {
-  background: radial-gradient(indigo, indigo, #fffff0);
+  background: indigo;
 }
 
 #violetBtn {
-  background: radial-gradient(violet, violet, #fffff0);
+  background: violet;
 }
 
 #output {
