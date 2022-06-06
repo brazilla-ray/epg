@@ -1,20 +1,31 @@
-<div id="add-buttons" class="container"><!-- flex container -->
-  <button id="addL" class="container">
-    <div class="icon" aria-hidden="true">{% include '_glyphL.njk' %}</div>
-    <div class="label">left</div>
-  </button>
-  <button id="addR" class="container">
-    <div class="icon" aria-hidden="true">{% include '_glyphR.njk' %}</div>
-    <div class="label">right</div>
-  </button>
+<div class="container">
+  <h2>add a glyph!</h2>
+  <p>the pattern will change as you add more.</p>
+  <div id="add-buttons" class="container">
+    <button id="addL" class="container">
+      <div class="icon" aria-hidden="true">{% include '_glyphL.njk' %}</div>
+      <div class="label">left</div>
+    </button>
+    <button id="addR" class="container">
+      <div class="icon" aria-hidden="true">{% include '_glyphR.njk' %}</div>
+      <div class="label">right</div>
+    </button>
+  </div>
 </div>
-<div id="color-pickers" class="container">
-  <!-- flex container -->
-  <button id="redBtn" class="picker"><span class="sr-only">red</span></button>
-  <button id="orangeBtn" class="picker "><span class="sr-only">orange</span></button>
-  <button id="yellowBtn" class="picker"><span class="sr-only">yellow</span></button>
-  <button id="greenBtn" class="picker"><span class="sr-only">green</span></button>
-  <button id="blueBtn" class="picker"><span class="sr-only">blue</span></button>
-  <button id="indigoBtn" class="picker"><span class="sr-only">indigo</span></button>
-  <button id="violetBtn" class="picker"><span class="sr-only">violet</span></button>
+<div class="container">
+  <h2>pick a color!</h2>
+  <ol>
+    <li>click on a glyph to select it.</li>
+    <li>click on one of the colors below to change its color.</li>
+    <li>you can change a glyph's color as many times as you like!</li>
+  </ol>
+  <div id="color-pickers" class="container">
+    <button id="redBtn" class="picker"><span class="sr-only">red</span></button>
+    <button id="orangeBtn" class="picker "><span class="sr-only">orange</span></button>
+    <button id="yellowBtn" class="picker"><span class="sr-only">yellow</span></button>
+    <button id="greenBtn" class="picker"><span class="sr-only">green</span></button>
+    <button id="blueBtn" class="picker"><span class="sr-only">blue</span></button>
+    <button id="indigoBtn" class="picker"><span class="sr-only">indigo</span></button>
+    <button id="violetBtn" class="picker"><span class="sr-only">violet</span></button>
+  </div>
 </div>

@@ -13,10 +13,14 @@ body {
   background-color: #fffff0;
 }
 
+main {
+  max-width: clamp(280px, calc(100vw - 110px), 600px);
+  margin: 0 auto;
+}
+
 section {
   flex-grow: 1;
   flex-basis: 100%;
-  max-width: clamp(280px, calc(100vw - 110px), 600px);
 }
 
 .label {
@@ -30,6 +34,11 @@ section {
 
 #controls {
   margin-top: 50px;
+
+  p,
+  ol {
+    padding-left: calc(#{u.$widthOfGap}px * 4);
+  }
 }
 
 #add-buttons {
