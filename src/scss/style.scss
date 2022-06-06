@@ -46,7 +46,7 @@ section {
 }
 
 #add-buttons button {
-  padding: 0;
+  padding: #{u.$widthOfGap}px;
   border: none;
   flex: 0
     calc(

@@ -5,7 +5,7 @@ const btnAddR = document.getElementById('addR');
 
 // glyph definitions
 const glyphL =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph"><g data-name="Glyph L"><line x1="4" y1="4" x2="58" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="4" y1="40" x2="22" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="40" y1="4" x2="59" y2="22" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g></svg>';
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph">< g data-name="Glyph L"><line x1="4" y1="4" x2="58" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="4" y1="40" x2="22" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="40" y1="4" x2="59" y2="22" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g ></svg >';
 
 const glyphR =
   '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62" class="glyph"><g data-name="Glyph R"><line x1="59" y1="4" x2="5" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="59" y1="40" x2="41" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="23" y1="4" x2="4" y2="22" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g></svg>';
@@ -28,15 +28,15 @@ function init() {
     },
   };
 
-  let selectedGlyph = "";
-  let selectedColor = "";
+  let selectedGlyph = '';
+  let selectedColor = '';
   let observer = new MutationObserver(function () {
     glyphListener();
   });
 
   observer.observe(displayArea, {
     subtree: true,
-    childList: true
+    childList: true,
   });
 
   function glyphButtons() {
@@ -76,7 +76,7 @@ function init() {
     function clearSelection() {
       for (let glyph of glyphs) {
         glyph.classList.remove('glyph-selected');
-        selectedGlyph = "";
+        selectedGlyph = '';
       }
     }
   }
@@ -86,5 +86,5 @@ function init() {
 }
 
 window.addEventListener('load', () => {
-    init();
-  });
+  init();
+});
