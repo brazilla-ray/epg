@@ -65,6 +65,7 @@ section {
   justify-content: center;
   gap: #{u.$widthOfGap}px;
   color: #fffff0;
+  touch-action: manipulation;
 }
 
 #add-buttons svg line {
