@@ -12,6 +12,7 @@
     "build": "npm-run-all build:sass --parallel build:*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+	"type": "commonjs",
   "keywords": [],
   "author": "",
   "license": "ISC",
