@@ -1,0 +1,145 @@
+/* https://andy-bell.co.uk/a-modern-css-reset/ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  --flow-space: 4rem;
+
+  font-family: Optima, Candara, "Noto Sans", source-sans-pro, sans-serif;
+  font-weight: normal;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 2rem);
+}
+
+article {
+  border: 1px solid green;
+}
+
+main {
+  --flow-space: 6rem;
+}
+
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--measure, 80ch);
+  padding-inline-start: 3rem;
+  padding-inline-end: 3rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-l); */
+}
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((22rem - 100%) * 999);
+}
+
+.switcher > :nth-last-child(n + 5),
+.switcher > :nth-last-child(n + 5) ~ * {
+  flex-basis: 100%;
+}
+
+.icon {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-inline: auto;
+}
+
+.button-row {
+  display: inline-flex;
+  gap: 2rem;
+  justify-content: flex-end;
+}
+
+.button-row button {
+  --flow-space: 1rem;
+
+  padding-block-start: 0.5rem;
+  flex-basis: 50%;
+  background-color: transparent;
+}
