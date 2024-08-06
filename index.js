@@ -42,11 +42,23 @@ function init() {
       //add svg, i.e., html, to '#output'
       displayArea.insertAdjacentHTML("afterbegin", glyph.left);
     });
+    // add with "J" key
+    window.addEventListener("keydown", (event) => {
+      if (event.code == "KeyJ") {
+        displayArea.insertAdjacentHTML("afterbegin", glyph.left);
+      }
+    });
 
     // right button
     btnAddR.addEventListener("click", () => {
       //add svg, i.e., html, to '#output'
       displayArea.insertAdjacentHTML("afterbegin", glyph.right);
+    });
+    // add with "K" key
+    window.addEventListener("keydown", (event) => {
+      if (event.code == "KeyK") {
+        displayArea.insertAdjacentHTML("afterbegin", glyph.right);
+      }
     });
   }
 
@@ -77,6 +89,10 @@ function init() {
       }
     }
   }
+
+  window.addEventListener("keydown", (event) => {
+    console.log(`pressed: ${event.key}: code: ${event.code}`);
+  });
 
   glyphButtons();
   colorButtons();
