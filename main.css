@@ -145,7 +145,6 @@ main {
 }
 
 section:has(.grid-container) {
-  background-color: #aedbfe;
   border: 1em solid #00000f;
   padding: 1em;
   inline-size: 33vw;
@@ -165,5 +164,33 @@ section:has(.grid-container) {
 }
 
 .glyph-selected line {
+  stroke: cyan;
+}
+
+.red-glyph line {
+  stroke: red;
+}
+
+.orange-glyph line {
+  stroke: orange;
+}
+
+.yellow-glyph line {
   stroke: yellow;
+}
+
+.green-glyph line {
+  stroke: green;
+}
+
+.blue-glyph line {
+  stroke: blue;
+}
+
+.indigo-glyph line {
+  stroke: indigo;
+}
+
+.violet-glyph line {
+  stroke: violet;
 }
