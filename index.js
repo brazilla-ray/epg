@@ -75,7 +75,7 @@ function init() {
 
   function glyphListener() {
     for (let glyph of glyphs) {
-      glyph.addEventListener("click", () => {
+      glyph.addEventListener("focus", () => {
         clearSelection();
         setColor.removeColorClass(glyph);
         glyph.classList.add("glyph-selected");
@@ -89,10 +89,6 @@ function init() {
       }
     }
   }
-
-  window.addEventListener("keydown", (event) => {
-    console.log(`pressed: ${event.key}: code: ${event.code}`);
-  });
 
   glyphButtons();
   colorButtons();
