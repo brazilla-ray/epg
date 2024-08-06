@@ -93,7 +93,7 @@ article {
 }
 
 main {
-  --flow-space: 6rem;
+  --flow-space: 1rem;
 }
 
 .center {
@@ -102,10 +102,10 @@ main {
   max-inline-size: var(--measure, 80ch);
   padding-inline-start: 3rem;
   padding-inline-end: 3rem;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-l); */
+  gap: var(--space-l, 8px);
 }
 
 .switcher {
@@ -142,6 +142,15 @@ main {
   padding-block-start: 0.5rem;
   flex-basis: 50%;
   background-color: transparent;
+}
+
+section:has(.grid-container) {
+  background-color: #aedbfe;
+  border: 1em solid #00000f;
+  padding: 1em;
+  inline-size: 33vw;
+  aspect-ratio: 1;
+  transform: rotate(-270deg);
 }
 
 .grid-container {
