@@ -1,3 +1,16 @@
+:root {
+  --red-color: oklch(60.66% 0.2392 27.8);
+  --orange-color: oklch(66.28% 0.1851 41.75);
+  --yellow-color: oklch(89.01% 0.1821 97.56);
+  --green-color: oklch(59.18% 0.2008 142.54);
+  --blue-color: oklch(41.63% 0.27 265.32);
+  --indigo-color: oklch(34.7% 0.1987 268.99);
+  --violet-color: oklch(60.59% 0.2452 300.11);
+  --white-color: oklch(99.92% 0.0011 197.13);
+  --black-color: oklch(13.93% 0.0308 285.43);
+  --gray-color: oklch(56.97% 0.0091 288.33);
+}
+
 [debug] {
   outline: 1px solid crimson;
 }
@@ -163,35 +176,35 @@ main {
 }
 
 [data-color="red"] {
-  background-color: red;
+  background-color: var(--red-color, red);
 }
 
 [data-color="orange"] {
-  background-color: orange;
+  background-color: var(--orange-color, orange);
 }
 
 [data-color="yellow"] {
-  background-color: yellow;
+  background-color: var(--yellow-color, yellow);
 }
 
 [data-color="green"] {
-  background-color: green;
+  background-color: var(--green-color, green);
 }
 
 [data-color="blue"] {
-  background-color: blue;
+  background-color: var(--blue-color, blue);
 }
 
 [data-color="indigo"] {
-  background-color: indigo;
+  background-color: var(--indigo-color, indigo);
 }
 
 [data-color="violet"] {
-  background-color: violet;
+  background-color: var(--violet-color, violet);
 }
 
 [data-color="white"] {
-  background-color: white;
+  background-color: var(--white-color, white);
 }
 
 section:has(.grid-container) {
@@ -207,7 +220,7 @@ section:has(.grid-container) {
   aspect-ratio: 1;
   max-height: 100%;
   margin-inline: auto;
-  background-color: #86afbf;
+  background-color: var(--gray-color);
 }
 
 .glyph-selected:focus {
@@ -219,35 +232,35 @@ section:has(.grid-container) {
 }
 
 .red-glyph line {
-  stroke: red;
+  stroke: var(--red-color);
 }
 
 .orange-glyph line {
-  stroke: orange;
+  stroke: var(--orange-color);
 }
 
 .yellow-glyph line {
-  stroke: yellow;
+  stroke: var(--yellow-color);
 }
 
 .green-glyph line {
-  stroke: green;
+  stroke: var(--green-color);
 }
 
 .blue-glyph line {
-  stroke: blue;
+  stroke: var(--blue-color);
 }
 
 .indigo-glyph line {
-  stroke: indigo;
+  stroke: var(--indigo-color);
 }
 
 .violet-glyph line {
-  stroke: violet;
+  stroke: var(--violet-color);
 }
 
 .white-glyph line {
-  stroke: white;
+  stroke: var(--white-color);
 }
 
 .sr-only {
