@@ -190,6 +190,10 @@ main {
   background-color: violet;
 }
 
+[data-color="white"] {
+  background-color: white;
+}
+
 section:has(.grid-container) {
   background-color: lightpink;
   block-size: 45vh;
@@ -241,6 +245,10 @@ section:has(.grid-container) {
 
 .violet-glyph line {
   stroke: violet;
+}
+
+.white-glyph line {
+  stroke: white;
 }
 
 .sr-only {

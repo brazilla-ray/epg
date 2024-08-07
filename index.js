@@ -8,7 +8,16 @@ const btnAddR = document.getElementById("addR");
 
 const glyphs = document.getElementsByClassName("glyph");
 
-const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+const colors = [
+  "red",
+  "orange",
+  "yellow",
+  "green",
+  "blue",
+  "indigo",
+  "violet",
+  "white",
+];
 
 function init() {
   const setColor = {
