@@ -195,9 +195,7 @@ main {
 }
 
 section:has(.grid-container) {
-  background-color: lightpink;
   block-size: 45vh;
-  /* inline-size: 45vh; */
   margin-inline: auto;
 }
 
@@ -209,6 +207,7 @@ section:has(.grid-container) {
   aspect-ratio: 1;
   max-height: 100%;
   margin-inline: auto;
+  background-color: #86afbf;
 }
 
 .glyph-selected:focus {
