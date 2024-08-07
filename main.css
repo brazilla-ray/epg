@@ -268,3 +268,13 @@ section:has(.grid-container) {
   top: -9999px;
   left: -9999px;
 }
+
+.prose {
+  text-align: center;
+  max-inline-size: 60ch;
+  margin-inline: auto;
+}
+
+.bold-prose {
+  font-weight: 700;
+}
