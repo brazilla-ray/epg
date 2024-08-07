@@ -1,3 +1,6 @@
+[debug] {
+  outline: 1px solid crimson;
+}
 /* https://andy-bell.co.uk/a-modern-css-reset/ */
 
 /* Box sizing rules */
@@ -77,6 +80,10 @@ select {
   }
 }
 
+.flow > * + * {
+  margin-block-start: var(--flow-space, 2rem);
+}
+
 body {
   --flow-space: 4rem;
 
@@ -84,12 +91,8 @@ body {
   font-weight: normal;
 }
 
-.flow > * + * {
-  margin-block-start: var(--flow-space, 2rem);
-}
-
-article {
-  border: 1px solid green;
+header {
+  text-align: center;
 }
 
 main {
@@ -125,29 +128,59 @@ main {
 }
 
 .icon {
-  width: 3.125rem;
-  height: 3.125rem;
   margin-inline: auto;
 }
 
 .button-row {
-  display: inline-flex;
-  gap: 2rem;
-  justify-content: flex-end;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.button-row {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(10px, 1fr));
+  grid-auto-rows: minmax(10px, auto);
 }
 
 .button-row button {
   --flow-space: 1rem;
 
-  padding-block-start: 0.5rem;
-  flex-basis: 50%;
-  background-color: transparent;
+  padding: 2px;
+  margin: 0;
+  flex: 0 1 50%;
+  width: 2rem;
+  height: 2rem;
+  border-style: none;
+  /* background-color: #eaeaea; */
+  box-shadow: 1px 1px black;
+  border-radius: 4px;
 }
 
+[data-color="red"] {
+  background-color: red;
+}
+
+[data-color="orange"] {
+  background-color: orange;
+}
+
+[data-color="yellow"] {
+  background-color: yellow;
+}
+[data-color="green"] {
+  background-color: green;
+}
 section:has(.grid-container) {
   background-color: lightpink;
   block-size: 45vh;
-  inline-size: 45vh;
+  /* inline-size: 45vh; */
+  margin-inline: auto;
 }
 
 .grid-container {
@@ -156,6 +189,8 @@ section:has(.grid-container) {
   grid-template-rows: repeat(4, 1fr);
   grid-auto-flow: column;
   aspect-ratio: 1;
+  max-height: 100%;
+  margin-inline: auto;
 }
 
 .glyph-selected:focus {
@@ -192,4 +227,10 @@ section:has(.grid-container) {
 
 .violet-glyph line {
   stroke: violet;
+}
+
+.sr-only {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }

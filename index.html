@@ -16,24 +16,26 @@
 </head>
 <body class="flow">
   <header><h1>The ephemral pattern generator.</h1></header>
-  <main class="center flow">
+  <main class="flow">
     <section id="output">
       <div id="glyph-container" class="grid-container"></div>
     </section>
-    <section class="switcher">
-      <div>
-      <h2>add a glyph!</h2>
-      <p>the pattern will change as you add more.</p>
-      </div>
+    <section>
       <div id="add-buttons" class="button-row">
-        <button id="addL" class="flow">
-          <div class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62"><g data-name="Glyph L"><line x1="4" y1="4" x2="58" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="4" y1="40" x2="22" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="40" y1="4" x2="59" y2="22" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g></svg></div>
-          <div class="label">left</div>
+        <button id="addL">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62"><g data-name="Glyph L"><line x1="4" y1="4" x2="58" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="4" y1="40" x2="22" y2="58" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="40" y1="4" x2="59" y2="22" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g></svg>
         </button>
-        <button id="addR" class="flow">
+        <button id="addR">
           <div class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 63 62"><g data-name="Glyph R"><line x1="59" y1="4" x2="5" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="59" y1="40" x2="41" y2="58" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/><line x1="23" y1="4" x2="4" y2="22" fill="#d71920" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="8"/></g></svg></div>
-          <div class="label">right</div>
         </button>
+        <button id="redBtn" class="picker" data-color="red"><span class="sr-only">red</span></button>
+        <button id="orangeBtn" class="picker" data-color="orange"><span class="sr-only">orange</span></button>
+        <button id="yellowBtn" class="picker" data-color="yellow"><span class="sr-only">yellow</span></button>
+        <button id="greenBtn" class="picker" data-color="green"><span class="sr-only">green</span></button>
+        <button id="blueBtn" class="picker" data-color="blue"><span class="sr-only">blue</span></button>
+        <button id="indigoBtn" class="picker" data-color="indigo"><span class="sr-only">indigo</span></button>
+        <button id="yellowBtn" class="picker" data-color="yellow"><span class="sr-only">yellow</span></button>
+        <button id="yellowBtn" class="picker" data-color="yellow"><span class="sr-only">yellow</span></button>
       </div>
     </section>
     <section>
